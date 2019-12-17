@@ -2,36 +2,76 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Good Clean Fun</title>
+	<title>GCF</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
-  <link href="/pace/themes/pace-theme-barber-shop.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/main.css">
+
+	<!-- icons -->
+	<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+<!-- jquery -->
+	<script
+	src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	crossorigin="anonymous"></script>
+
+	<!-- gsap tweenmax -->
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
 </head>
 
-<body>
-	<h1 class="title">GOOD CLEAN FUN</h1>
-
-	<div class="preloader">
-		<div class="p">LOADING</div>
-	</div>
-</body>
+	<body>
+		<video autoplay muted loop id="back-vid">
+    <source src="media/GCF.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+  	</video>
 
 
-	<!-- link for jquery -->
-	<script
-  	src="https://code.jquery.com/jquery-3.4.1.min.js"
-  	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  	crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-
-		<!-- link for your script file -->
-  	<script src="scripts/script.js"></script>
-		<script src="scripts/pace.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.4/gsap.min.js"></script>
+			<p class="line anim-typewriter">Good Clean Fun.</p>
 
 
-</body>
+		<div class="nav-wrapper">
+					 <nav>
+								 <a href="index.html" class="hover-this"><span>Home</span></a>
+								 <a href="artists.html" class="hover-this"><span>Artists</span></a>
+								 <a href="artists.html" class="hover-this"><span>Events</span></a>
+								 <a href="artists.html" class="hover-this"><span>Gallery</span></a>
+								 <div class="cursor"></div>
+					 </nav>
+		 </div>
+
+
+
+
+<!--mousmove script-->
+
+		 <script>
+	 (function () {
+	       const link = document.querySelectorAll('nav > .hover-this');
+	       const cursor = document.querySelector('.cursor');
+	       const animateit = function (e) {
+	             const span = this.querySelector('span');
+	             const { offsetX: x, offsetY: y } = e,
+	             { offsetWidth: width, offsetHeight: height } = this,
+	             move = 2,
+	             xMove = x / width * (move * 1) - move,
+	             yMove = y / height * (move * 1) - move;
+	             span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+	             if (e.type === 'mouseleave') span.style.transform = '';
+	       };
+	       const editCursor = e => {
+	             const { clientX: x, clientY: y } = e;
+	             cursor.style.left = x + 'px';
+	             cursor.style.top = y + 'px';
+	       };
+	       link.forEach(b => b.addEventListener('mousemove', animateit));
+	       link.forEach(b => b.addEventListener('mouseleave', animateit));
+	       window.addEventListener('mousemove', editCursor);
+	 })();
+	 </script>
+	</body>
+
 </html>

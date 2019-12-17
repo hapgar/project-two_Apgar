@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Agrandir Light";
+  src: url("../fonts/Agrandir-GrandLight.otf") format("opentype");
+}
+@font-face {
+  font-family: "Agrandir Bold";
+  src: url("../fonts/Agrandir-GrandHeavy.otf") format("opentype");
+}
+@font-face {
+  font-family: "Agrandir Text";
+  src: url("../fonts/Agrandir-Regular.otf") format("opentype");
+}
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: black;
+  font-family: "Agrandir Light";
+  color: #fff;
+  font-size: 400px;
+}
+
+.letter1 {
+  color: orange;
+  position: absolute;
+  top: 30%;
+  left: 0;
+}
+
+.letter2 {
+  position: absolute;
+  top: 0;
+  left: 20%;
+}
+
+.letter3 {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+}
+
+.letter4 {
+  color: orange;
+  position: absolute;
+  top: 80%;
+  left: 80%;
+}
+
+.letter5 {
+  color: orange;
+  position: absolute;
+  top: 120%;
+  left: 10%;
+}
+
+.letter6 {
+  position: absolute;
+  top: 130%;
+  left: 20%;
+}
+
+.letter7 {
+  color: orange;
+  position: absolute;
+  top: 220%;
+  left: 60%;
+}
+
+.letter8 {
+  position: absolute;
+  top: 250%;
+  left: 10%;
+}
+
+.box1 {
+  background: #0008fd;
+  width: 40%;
+  position: absolute;
+  top: 30%;
+  left: 4%;
+}
+
+.box2 {
+  background: #0008fd;
+  height: 400px;
+  weight: 400px;
+  position: absolute;
+  top: 56%;
+  left: 60%;
+}
+
+.box3 {
+  background: #0008fd;
+  width: 40%;
+  position: absolute;
+  top: 100%;
+  left: 18%;
+}
+
+.box4 {
+  background: #0008fd;
+  width: 50%;
+  position: absolute;
+  top: 160%;
+  left: 50%;
+}
+
+.box5 {
+  background: #0008fd;
+  width: 50%;
+  position: absolute;
+  top: 210%;
+  left: 12%;
+}
+
+.nav-wrapper {
+  width: 100%;
+  height: 100vh;
+  background: #161616;
+  z-index: 15;
+}
+
+nav {
+  width: 100%;
+  text-align: right;
+  position: fixed;
+  top: -40%;
+  right: 3%;
+  z-index: 100;
+  word-spacing: -100px;
+}
+
+.hover-this {
+  transition: all 0.3s ease;
+}
+
+span {
+  display: inline-block;
+  padding: -100px;
+  font-family: "Agrandir Light";
+  font-weight: 300;
+  color: #fff;
+  font-size: 18px;
+  text-transform: uppercase;
+  pointer-events: none;
+  transition: transform 0.1s linear;
+}
+
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  padding: 0.4rem;
+  background-color: #fff;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+  transition: transform 0.3s ease;
+}
+
+.hover-this:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(4.5);
+}
+
+/*# sourceMappingURL=artists.css.map */

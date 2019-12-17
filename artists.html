@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Artists</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/artists.css">
+  <script src="scripts/rellax.js"></script>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+  <!-- gsap tweenmax -->
+  <script src= "https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="nav-wrapper">
+         <nav>
+               <a href="index.html" class="hover-this"><span>Home</span></a>
+               <a href="artists.html" class="hover-this"><span>Artists</span></a>
+               <a href="artists.html" class="hover-this"><span>Events</span></a>
+               <a href="artists.html" class="hover-this"><span>Gallery</span></a>
+               <div class="cursor"></div>
+         </nav>
+   </div>
+
+      <img src="images/jason.jpg" class="box1" alt="">
+      <img src="images/apollo.jpeg" class="box2" alt="">
+      <img src="images/outlandish.jpg" class="box3" alt="">
+      <img src="images/GCF2.jpg" class="box4" alt="">
+      <img src="images/GCF3.jpg" class="box5" alt="">
+
+
+
+      <div class="letter1 rellax" data-rellax-speed="6">C</div>
+      <div class="letter2 rellax" data-rellax-speed="2">L</div>
+      <div class="letter3 rellax" data-rellax-speed="6">E</div>
+      <div class="letter4 rellax" data-rellax-speed="8">A</div>
+      <div class="letter5 rellax" data-rellax-speed="10">N</div>
+      <div class="letter6 rellax" data-rellax-speed="4">F</div>
+      <div class="letter7 rellax" data-rellax-speed="6">U</div>
+      <div class="letter8 rellax" data-rellax-speed="6">N</div>
+
+   <script type="text/javascript">
+
+        var rellax = new Rellax('.rellax');
+
+   </script>
+
+   <script>
+ (function () {
+       const link = document.querySelectorAll('nav > .hover-this');
+       const cursor = document.querySelector('.cursor');
+       const animateit = function (e) {
+             const span = this.querySelector('span');
+             const { offsetX: x, offsetY: y } = e,
+             { offsetWidth: width, offsetHeight: height } = this,
+             move = 2,
+             xMove = x / width * (move * 1) - move,
+             yMove = y / height * (move * 1) - move;
+             span.style.transform = `translate(${xMove}px, ${yMove}px)`;
+             if (e.type === 'mouseleave') span.style.transform = '';
+       };
+       const editCursor = e => {
+             const { clientX: x, clientY: y } = e;
+             cursor.style.left = x + 'px';
+             cursor.style.top = y + 'px';
+       };
+       link.forEach(b => b.addEventListener('mousemove', animateit));
+       link.forEach(b => b.addEventListener('mouseleave', animateit));
+       window.addEventListener('mousemove', editCursor);
+ })();
+ </script>
+
+</body>
+</html>
